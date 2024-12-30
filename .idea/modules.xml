@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Monomicro.iml" filepath="$PROJECT_DIR$/.idea/Monomicro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-fetcher-service-client/data-fetcher-service-client.iml" filepath="$PROJECT_DIR$/data-fetcher-service-client/data-fetcher-service-client.iml" />
     </modules>
   </component>
 </project>
