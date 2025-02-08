@@ -4,6 +4,15 @@ server:
 spring:
   application:
     name: apigateway
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/monomicro-realm
+
+
+
   cloud:
     gateway:
       discovery:
@@ -14,8 +23,18 @@ spring:
         - id: test
           uri: lb://datafetcher
           predicates:
-            - Path=/main/test
-            - Method=GET
+            - Path=/api/v1/data-fetcher/monthly-report
+            - Method=POST
+        - id: data-fetcher-converter
+          uri: lb://datafetcher
+          predicates:
+            - Path=/api/v1/data-fetcher/fetcher-converter
+            - Method=POST
+        - id: data-fetcher-storager
+          uri: lb://datafetcher
+          predicates:
+            - Path=/api/v1/data-fetcher/fetcher-storager
+            - Method=POST
 
 eureka:
   client:

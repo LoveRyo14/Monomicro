@@ -4,6 +4,16 @@ server:
 spring:
   application:
     name: datafetcher
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: service-a-group
+      auto-offset-reset: earliest
 
 eureka:
   client:
